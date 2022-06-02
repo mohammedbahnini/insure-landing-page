@@ -1,0 +1,68 @@
+$spacing: 0;
+
+// padding and maring
+@while ($spacing <= 10) {
+  .p-t-#{$spacing*4} {
+    padding-top: #{$spacing}rem;
+  }
+  .p-r-#{$spacing*4} {
+    padding-right: #{$spacing}rem;
+  }
+  .p-b-#{$spacing*4} {
+    padding-bottom: #{$spacing}rem;
+  }
+  .p-l-#{$spacing*4} {
+    padding-left: #{$spacing}rem;
+  }
+  .p-x-#{$spacing*4} {
+    padding-left: #{$spacing}rem;
+    padding-right: #{$spacing}rem;
+  }
+  .p-y-#{$spacing*4} {
+    padding-top: #{$spacing}rem;
+    padding-bottom: #{$spacing}rem;
+  }
+
+  .m-t-#{$spacing*4} {
+    margin-top: #{$spacing}rem;
+  }
+  .m-r-#{$spacing*4} {
+    margin-right: #{$spacing}rem;
+  }
+  .m-b-#{$spacing*4} {
+    margin-bottom: #{$spacing}rem;
+  }
+  .m-l-#{$spacing*4} {
+    margin-left: #{$spacing}rem;
+  }
+  .m-x-#{$spacing*4} {
+    margin-left: #{$spacing}rem;
+    margin-right: #{$spacing}rem;
+  }
+  .m-y-#{$spacing*4} {
+    margin-top: #{$spacing}rem;
+    margin-bottom: #{$spacing}rem;
+  }
+
+  $spacing: $spacing + 0.25;
+}
+
+.m-x-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.m-l-auto {
+  margin-left: auto;
+}
+.m-r-auto {
+  margin-right: auto;
+}
+
+// width
+$width: 0;
+@while $width <= 100 {
+  .width-#{$width}-percent {
+    width: #{$width}+ "%";
+  }
+  $width: $width + 1;
+}

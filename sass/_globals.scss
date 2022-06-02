@@ -1,0 +1,95 @@
+@use "variables" as *;
+@use "spacing";
+@use "display";
+@use "typo";
+@use "mixins" as *;
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Karla", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: "DM Serif Display", serif;
+}
+
+.color-violet-1 {
+  color: $neutral-violet-1;
+}
+.color-violet-2 {
+  color: $neutral-violet-2;
+}
+.color-gray {
+  color: $neutral-gray;
+}
+
+.bg-violet {
+  background-color: $primary-violet;
+}
+.bg-blue {
+  background-color: $primary-blue;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+p {
+  line-height: 1.5em;
+}
+
+// simple btn
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 0.5em 1.5em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: $transition-timing;
+  &.outline {
+    border: 2px solid $primary-violet;
+  }
+  &:hover {
+    color: white;
+    background-color: $primary-violet;
+  }
+  &.reverse {
+    color: $neutral-gray;
+    &.outline {
+      border-color: $neutral-gray;
+    }
+    &:hover {
+      color: $neutral-violet-1;
+      background-color: $neutral-gray;
+    }
+  }
+}
+// container rules
+.container {
+  max-width: 69.375rem;
+  width: 87.2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// images
+img {
+  width: 100%;
+}

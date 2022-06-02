@@ -1,0 +1,43 @@
+// font-sizing
+$size: 0.25;
+@while ($size <= 10) {
+  .f-s-#{$size * 4} {
+    font-size: #{$size}rem;
+  }
+
+  $size: $size + 0.25;
+}
+
+// weights
+.f-w-light {
+  font-weight: 100;
+}
+.f-w-normal {
+  font-weight: 400;
+}
+.f-w-semi-bold {
+  font-weight: 500;
+}
+.f-w-bold {
+  font-weight: 700;
+}
+.f-w-bolder {
+  font-weight: 900;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+
+// align
+.align-left {
+  text-align: left;
+}
+.align-right {
+  text-align: right;
+}
+.align-center {
+  text-align: center;
+}

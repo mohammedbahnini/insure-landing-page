@@ -1,0 +1,340 @@
+@use "variables" as *;
+
+@use "globals";
+
+@use "mixins" as *;
+
+// nav
+header {
+  margin-bottom: 19rem;
+  @include sm-and-down {
+    margin-bottom: 8.5rem;
+  }
+  .nav {
+    @include sm-and-down {
+      height: 5.5rem;
+      padding: 0;
+      //position: relative;
+    }
+    nav {
+      background-color: white;
+      @include sm-and-down {
+        position: absolute;
+        z-index: 999;
+        top: 5.5rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("../images/bg-pattern-mobile-nav.svg") no-repeat bottom /
+          100%;
+        background-color: $primary-violet;
+        padding-top: 3rem;
+        transform: scale(0);
+        transform-origin: top right;
+        opacity: 0;
+        transition: $transition-timing;
+        &.show {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+      ul {
+        @include sm-and-down {
+          flex-direction: column;
+          width: 87%;
+          margin: 0 auto;
+        }
+        li {
+          @include sm-and-down {
+            width: 100%;
+            text-align: center;
+          }
+          a {
+            letter-spacing: 0.1em;
+            transition: $transition-timing;
+            @include sm-and-down {
+              color: $neutral-gray;
+            }
+            &:hover {
+              color: $neutral-violet-1;
+            }
+          }
+        }
+        .btn {
+          @include sm-and-down {
+            border-color: $neutral-gray;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .menu-toggle {
+    display: none;
+    border: none;
+    outline: none;
+    background-color: none;
+    background: url("../images/icon-hamburger.svg") no-repeat center / cover;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    cursor: pointer;
+    &.show {
+      background-image: url("../images/icon-close.svg");
+    }
+    @include sm-and-down {
+      display: inline-block;
+    }
+  }
+  .hero {
+    background-color: $primary-violet;
+    position: relative;
+    .container {
+      position: relative;
+      @include sm-and-down {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      .hero-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        @include sm-and-down {
+          position: relative;
+          width: 100%;
+        }
+      }
+    }
+    &::after {
+      content: url("../images/bg-pattern-intro-left-desktop.svg");
+      position: absolute;
+      top: 73.5%;
+      left: 0;
+      display: block;
+    }
+    &::before {
+      content: url("../images/bg-pattern-intro-right-desktop.svg");
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: block;
+    }
+    .content {
+      position: relative;
+
+      .heading {
+        position: relative;
+        line-height: 1em;
+        @include sm-and-down {
+          text-align: center;
+          font-size: 2.75rem;
+          padding: 0;
+        }
+        &::after {
+          content: "";
+          width: 9.375rem;
+          height: 1px;
+          background-color: $neutral-gray;
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include sm-and-down {
+            display: none;
+          }
+        }
+      }
+      p {
+        @include sm-and-down {
+          text-align: center;
+        }
+      }
+
+      @include sm-and-down {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5.8rem;
+        padding-bottom: 5.8rem;
+        position: relative;
+        padding-left: calc((100% - 87.2%) / 2);
+        padding-right: calc((100% - 87.2%) / 2);
+        position: relative;
+        &::after {
+          content: url("../images/bg-pattern-intro-left-mobile.svg");
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+        }
+        &::before {
+          content: url("../images/bg-pattern-intro-right-mobile.svg");
+          position: absolute;
+          top: 74%;
+          right: 0;
+          display: block;
+        }
+      }
+    }
+    @include sm-and-down {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+main {
+  .container {
+    > .heading {
+      position: relative;
+      line-height: 1em;
+      @include sm-and-down {
+        font-size: 2.75rem;
+        text-align: center;
+      }
+      &::after {
+        content: "";
+        width: 9.375rem;
+        height: 1px;
+        background-color: $primary-violet;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include sm-and-down {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .features {
+    @include sm-and-down {
+      flex-direction: column;
+      gap: 3.75rem;
+    }
+    .item {
+      flex: 1;
+      @include sm-and-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      p {
+        @include sm-and-down {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  // find out section
+  .find-out {
+    background: url("../images/bg-pattern-how-we-work-desktop.svg") no-repeat
+      right / auto 100%;
+    background-color: $primary-violet;
+    @include sm-and-down {
+      padding-left: 2.75rem;
+      padding-right: 2.75rem;
+      padding-bottom: 4.375rem;
+      background-image: url("../images/bg-pattern-how-we-work-mobile.svg");
+    }
+    .content {
+      @include sm-and-down {
+        flex-direction: column;
+        gap: 1.75rem;
+      }
+    }
+    .heading {
+      font-size: 3.125rem;
+      line-height: 1em;
+      @include sm-and-down {
+        width: 100%;
+        font-size: 1.75rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+footer {
+  background: url("../images/bg-pattern-footer-desktop.svg") no-repeat left top;
+  background-color: $neutral-gray;
+  @include sm-and-down {
+    background-image: url("../images/bg-pattern-footer-mobile.svg");
+  }
+  .header {
+    border-bottom: 1px solid $neutral-violet-2;
+    @include sm-and-down {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .logo {
+      width: 9.375rem;
+    }
+
+    .social-media-links a {
+      transition: $transition-timing;
+      &:hover {
+        color: $neutral-violet-1;
+      }
+    }
+  }
+
+  .footer-link {
+    @include sm-and-down {
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+    }
+    .link-group {
+      flex: 1;
+      @include sm-and-down {
+        text-align: center;
+      }
+      .title {
+        @include sm-and-down {
+          margin-bottom: 1.5rem;
+        }
+      }
+      ul {
+        @include sm-and-down {
+          gap: 1rem;
+        }
+        li a {
+          transition: $transition-timing;
+          position: relative;
+          &:hover {
+            &::after {
+              width: 100%;
+            }
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            background-color: $neutral-violet-1;
+            transition: $transition-timing;
+          }
+        }
+      }
+    }
+  }
+}
