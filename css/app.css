@@ -3151,7 +3151,7 @@ header .nav nav ul li a {
     color: hsl(0deg, 0%, 98%);
   }
 }
-header .nav nav ul li a:hover {
+header .nav nav ul li a:not(.btn):hover {
   color: hsl(270deg, 9%, 17%);
 }
 @media only screen and (max-width: 768px) {

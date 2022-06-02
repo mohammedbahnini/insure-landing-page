@@ -55,7 +55,7 @@ header {
             @include sm-and-down {
               color: $neutral-gray;
             }
-            &:hover {
+            &:not(.btn):hover {
               color: $neutral-violet-1;
             }
           }
